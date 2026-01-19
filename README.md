@@ -20,6 +20,8 @@ To design and implement basic arithmetic logic circuits using the McCulloch–Pi
 All circuits were tested on all possible input combinations and the outputs match the theoretical truth tables.
 
 
+
+
 # Assignment 2: Perceptron Learning Algorithm on Iris Dataset
 
 ## Objective
