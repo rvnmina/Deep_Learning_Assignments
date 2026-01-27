@@ -52,5 +52,51 @@ To implement the Perceptron learning algorithm from scratch and analyze its perf
 ## Results
 The custom Perceptron achieved performance comparable to scikit-learn’s implementation. The Setosa class was linearly separable from the other classes, while Versicolor and Virginica showed overlapping regions, indicating partial linear separability of the dataset.
 
+
+# Assignment 3: Deep Learning for Regression and Model Comparison
+
+## Objective
+
+To design, train, and evaluate neural network models for a regression task using the Communities and Crime dataset, and to compare NumPy-based and PyTorch-based implementations.
+
+## Implemented Tasks
+
+- Dataset loading and preprocessing  
+- Handling missing values and feature normalization  
+- Train, validation, and test dataset splitting  
+- Neural network training for regression  
+- Hyperparameter (δ) selection using validation R² score  
+- Test set evaluation and prediction visualization  
+- PyTorch implementation with identical architecture  
+- Performance comparison between NumPy-based and PyTorch models  
+
+## Concepts Used
+
+- Feedforward Neural Networks (MLP)  
+- Regression using neural networks  
+- Feature scaling using StandardScaler  
+- Mean Squared Error (MSE) and Huber loss  
+- R² score for model evaluation  
+- Hyperparameter tuning and model selection  
+- Overfitting and generalization analysis  
+- Comparison of deep learning frameworks  
+
+## Files
+
+- `Assignment_3_Deep_Learning_Regression.ipynb` – Complete implementation and analysis  
+- `best_model_weights.h5` – Saved weights of the best-performing model  
+- `README.md` – Assignment overview  
+
+## Results
+
+The neural network models were trained and evaluated successfully on the Communities and Crime dataset.  
+The optimal value of δ was selected based on validation R² score.  
+Both NumPy-based and PyTorch implementations achieved comparable test-set R² scores, indicating consistent and reliable performance.
+
+## Conclusion
+
+This assignment demonstrates the effective application of deep learning techniques for regression problems.  
+The comparison between NumPy-based and PyTorch implementations highlights consistency in model behavior across frameworks while reinforcing core deep learning concepts.
+
 ## Author
 Ravindra Mina 
