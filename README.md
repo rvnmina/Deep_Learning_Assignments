@@ -98,5 +98,92 @@ Both NumPy-based and PyTorch implementations achieved comparable test-set R² sc
 This assignment demonstrates the effective application of deep learning techniques for regression problems.  
 The comparison between NumPy-based and PyTorch implementations highlights consistency in model behavior across frameworks while reinforcing core deep learning concepts.
 
+
+# Assignment: Gradient Descent Based Optimization Algorithms
+
+---
+
+## Objective
+
+To design, implement, and analyze gradient descent based optimization algorithms for training a fully connected neural network, and to compare custom implementations with PyTorch’s built-in optimizers.
+
+---
+
+## Tasks Performed
+
+- Loaded and preprocessed the Bike Sharing Dataset  
+- Handled missing values and duplicate records  
+- Performed feature selection and one-hot encoding  
+- Split data into training, validation, and test sets  
+- Applied feature scaling and target transformation  
+- Designed a fully connected neural network for regression  
+- Implemented optimization algorithms from scratch  
+- Trained the same model using PyTorch optimizers  
+- Evaluated model performance using standard regression metrics  
+
+---
+
+## Implemented Optimization Algorithms
+
+- Gradient Descent with Momentum (from scratch)  
+- Adam Optimizer (from scratch)  
+- Adam Optimizer using PyTorch  
+
+---
+
+## Neural Network Architecture
+
+- **Input Layer:** Dataset-dependent feature dimension  
+- **Hidden Layers:**
+  - 256 units – ReLU activation  
+  - 128 units – ReLU activation  
+  - 64 units – ReLU activation  
+  - 32 units – ReLU activation  
+- **Output Layer:**
+  - 1 unit – Linear activation (regression task)  
+
+---
+
+## Evaluation Metrics
+
+- Mean Squared Error (MSE)  
+- Coefficient of Determination (R² Score)  
+
+---
+
+## Results
+
+- The custom implementation of Adam achieved good convergence and stable training.  
+- PyTorch’s Adam optimizer demonstrated faster convergence and improved generalization.  
+- The best-performing model achieved:
+  - **Test R² ≈ 0.85**, explaining approximately **85% of the variance** in bike rental demand.  
+- Scatter plots of predicted vs. true values show strong alignment along the diagonal, indicating excellent predictive performance.
+
+---
+
+## Concepts Used
+
+- Gradient Descent Optimization  
+- Momentum-Based Optimization  
+- Adam Optimizer  
+- Backpropagation  
+- Feature Scaling and Target Transformation  
+- Neural Networks for Regression  
+- Model Evaluation and Comparison  
+
+---
+
+## Files
+
+- `Gradient_Descent_Optimization.ipynb`  
+  Complete implementation including data preprocessing, model training, optimization algorithms, evaluation, and visualizations.
+
+---
+
+## Conclusion
+
+This assignment highlights the effectiveness of gradient descent based optimization techniques for training neural networks. The comparison between from-scratch implementations and PyTorch’s Adam optimizer demonstrates the advantages of optimized learning strategies in achieving better convergence and generalization.
+
+
 ## Author
 Ravindra Mina 
