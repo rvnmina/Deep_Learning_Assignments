@@ -99,7 +99,7 @@ This assignment demonstrates the effective application of deep learning techniqu
 The comparison between NumPy-based and PyTorch implementations highlights consistency in model behavior across frameworks while reinforcing core deep learning concepts.
 
 
-# Assignment: Gradient Descent Based Optimization Algorithms
+# Assignment 4: Gradient Descent Based Optimization Algorithms
 
 ---
 
