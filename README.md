@@ -185,5 +185,84 @@ To design, implement, and analyze gradient descent based optimization algorithms
 This assignment highlights the effectiveness of gradient descent based optimization techniques for training neural networks. The comparison between from-scratch implementations and PyTorch’s Adam optimizer demonstrates the advantages of optimized learning strategies in achieving better convergence and generalization.
 
 
+# Assignment 5: Regularization Techniques for Neural Networks
+
+---
+
+## Objective
+
+To design and train a fully connected neural network using PyTorch to predict the superconducting critical temperature.  
+The assignment focuses on understanding the effect of Batch Normalization and batch size on model performance and generalization.
+
+---
+
+## Implemented Tasks
+
+- Data preprocessing and feature scaling using StandardScaler  
+- Conversion of dataset into PyTorch tensors and DataLoaders  
+- Design of a feed-forward neural network with three hidden layers  
+- Custom Batch Normalization implementation from scratch  
+- Model training using multiple batch sizes  
+- Test set evaluation using Mean Squared Error (MSE) and R² score  
+- Batch size vs performance analysis  
+- Prediction scatter plot visualization  
+- PyTorch Batch Normalization implementation and comparison
+
+---
+
+## Model Architecture
+
+- Input Layer: 81 features  
+- Hidden Layer 1: 256 neurons + BatchNorm + ReLU  
+- Hidden Layer 2: 128 neurons + BatchNorm + ReLU  
+- Hidden Layer 3: 64 neurons + BatchNorm + ReLU  
+- Output Layer: 1 neuron (Regression output)
+
+Loss Function:
+- Mean Squared Error (MSE)
+
+Optimizer:
+- Adam Optimizer
+
+---
+
+## Concepts Used
+
+- Fully Connected Neural Networks
+- Batch Normalization (Custom and PyTorch)
+- Gradient Descent Optimization
+- Model Generalization
+- Regression Performance Metrics (MSE, R²)
+- Data Normalization and Scaling
+
+---
+
+## Files
+
+- `DL_Lab5.ipynb` – Complete implementation and experiments  
+- `superconductivty+data.zip` – Dataset used for training and testing
+
+---
+
+## Results
+
+- Models were trained using batch sizes: `{4, 8, 16, 32, 64, 128, 256}`  
+- Medium batch sizes (32–64) achieved the best R² performance.  
+- Custom Batch Normalization improved training stability.  
+- PyTorch BatchNorm implementation showed strong generalization on the test set.
+
+All experiments were implemented strictly using **PyTorch** without TensorFlow.
+
+---
+
+## Visualizations
+
+- Training vs Validation Loss Curves
+- Batch Size vs R² Performance Plot
+- Prediction Scatter Plots (Predicted vs Ground Truth)
+
+---
+
+
 ## Author
 Ravindra Mina 
