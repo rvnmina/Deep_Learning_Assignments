@@ -262,7 +262,133 @@ All experiments were implemented strictly using **PyTorch** without TensorFlow.
 - Prediction Scatter Plots (Predicted vs Ground Truth)
 
 ---
+# Assignment 6: Object Localization using CNN (NumPy & PyTorch)
 
+---
+
+## Objective
+
+To design and train a Convolutional Neural Network (CNN) from scratch using NumPy and compare it with a PyTorch implementation for object localization on the Oxford-IIIT Pets dataset.
+
+This assignment focuses on bounding box regression, CNN architecture design, and evaluation using IoU (Intersection over Union).
+
+---
+
+## Implemented Tasks
+
+- Loaded Oxford-IIIT Pets dataset
+- Generated bounding boxes from segmentation masks
+- Normalized bounding box coordinates
+- Split dataset into training and validation sets (80-20)
+- Implemented CNN from scratch using NumPy
+- Designed Smooth L1 (Huber) loss
+- Trained NumPy model using SGD with momentum
+- Implemented same architecture in PyTorch
+- Trained PyTorch model
+- Evaluated using IoU metric
+- Compared NumPy vs PyTorch performance
+- Visualized predictions vs ground truth
+
+---
+
+## Model Architecture
+
+### Input
+- Image size: **64 × 64 × 3**
+
+### Convolutional Layers
+- Conv1 → 64 filters + BatchNorm + ReLU + MaxPool  
+- Conv2 → 128 filters + BatchNorm + ReLU + MaxPool  
+- Conv3 → 256 filters + BatchNorm + ReLU + MaxPool  
+- Conv4 → 512 filters + BatchNorm + ReLU + MaxPool  
+
+### Fully Connected Layers
+- FC1: 8192 → 512 + ReLU + Dropout  
+- FC2: 512 → 256 + ReLU + Dropout  
+- Output: 256 → 4 (Bounding Box) + Sigmoid  
+
+---
+
+## Loss Function
+
+- **Smooth L1 Loss (Huber Loss)**
+- Robust for bounding box regression
+
+---
+
+## Optimizer
+
+### NumPy Model
+- SGD with Momentum
+- Learning rate decay
+
+### PyTorch Model
+- SGD Optimizer (momentum = 0.9)
+
+---
+
+## Concepts Used
+
+- Convolutional Neural Networks (CNN)
+- Bounding Box Regression
+- Batch Normalization
+- Dropout Regularization
+- Gradient Descent
+- Smooth L1 Loss
+- Intersection over Union (IoU)
+- NumPy vs PyTorch comparison
+
+---
+
+## Files
+
+- `assignment6.ipynb` — Complete implementation  
+- `numpy_cnn_weights.npz` — NumPy model weights  
+- `pytorch_bbox_model.pth` — PyTorch model weights  
+
+---
+
+## Results
+
+- Trained for **20 epochs**
+- Stable convergence observed
+
+### Performance (Approx)
+
+- **Mean IoU:** ~0.63 – 0.67  
+- **Median IoU:** ~0.65 – 0.69  
+- **IoU > 0.5:** ~85%+  
+- **IoU > 0.3:** ~97%+  
+
+---
+
+## Observations
+
+- PyTorch model performs slightly better  
+- NumPy model helps understand backpropagation deeply  
+- Good localization performance achieved  
+- Predictions closely match ground truth  
+
+---
+
+## Visualization
+
+- 🟩 Ground Truth  
+- 🟥 NumPy CNN  
+- 🟦 PyTorch CNN  
+
+---
+
+## Conclusion
+
+This assignment demonstrates complete object localization pipeline using CNNs.
+
+It highlights:
+- Manual deep learning implementation (NumPy)
+- Framework-based optimization (PyTorch)
+- Real-world computer vision application
+
+---
 
 ## Author
 Ravindra Mina 
