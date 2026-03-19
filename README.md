@@ -500,8 +500,8 @@ Differences arise due to:
 ---
 
 ## Tech Stack
-- Python 🐍  
-- PyTorch 🔥  
+- Python  
+- PyTorch 
 - NumPy  
 - Matplotlib  
 - torchattacks  
