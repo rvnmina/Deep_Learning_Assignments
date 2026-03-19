@@ -383,6 +383,133 @@ This assignment focuses on bounding box regression, CNN architecture design, and
 
 This assignment demonstrates complete object localization pipeline using CNNs.
 
+# Deep Learning Assignment — CNN & Adversarial Attacks
+
+## Overview
+This project implements a Convolutional Neural Network (CNN) for image classification and evaluates its robustness using adversarial attacks such as **DeepFool**. The assignment also compares a custom implementation with the `torchattacks` library.
+
+---
+
+## Objectives
+- Build and train a CNN model
+- Optimize using Adam optimizer
+- Evaluate model performance
+- Implement DeepFool adversarial attack
+- Compare custom vs library-based attacks
+- Visualize results
+
+---
+
+## Model Architecture
+- Conv2D + BatchNorm + ReLU layers
+- Residual/Skip connections
+- Adaptive Average Pooling
+- Final classifier layer
+
+**Total Parameters:** ~4.4 Million
+
+---
+
+## Training Details
+- Optimizer: Adam
+- Learning Rate: 1e-3
+- Scheduler: Cosine Annealing
+- Epochs: 30
+
+### Training Results
+- Final Train Accuracy: **~97%**
+- Final Validation Accuracy: **~96%**
+
+✔ Smooth convergence observed  
+✔ No major overfitting  
+
+---
+
+## Performance Evaluation
+
+### Test Accuracy
+- **~96% overall accuracy**
+
+### Classification Metrics
+- High precision, recall, and F1-score across all classes
+- Balanced performance across categories
+
+---
+
+## Confusion Matrix
+- Strong diagonal dominance
+- Minimal misclassification
+- Model performs consistently across classes
+
+---
+
+## DeepFool Attack (Custom Implementation)
+
+### Results:
+- Successfully fooled most correctly classified samples
+- **Attack Success Rate: ~100%**
+- Average perturbation: Low (imperceptible noise)
+
+Insight:
+> Model is highly vulnerable to adversarial perturbations.
+
+---
+
+## DeepFool using torchattacks
+
+### Results:
+- **Success Rate: ~93–95%**
+- Slightly lower than custom implementation
+
+Reason:
+- Uses fixed number of iterations
+- Less aggressive than custom approach
+
+---
+
+## 📊 Comparison
+
+| Method                  | Success Rate |
+|------------------------|-------------|
+| Custom DeepFool        | ~100%       |
+| torchattacks DeepFool  | ~93–95%     |
+
+📉 Difference: ~5–7%
+
+### Conclusion:
+Both implementations follow the same DeepFool algorithm.  
+Differences arise due to:
+- Iteration limits  
+- Numerical precision  
+- Implementation strategy  
+
+---
+
+## Visualization
+- Loss vs Epoch graph
+- Accuracy vs Epoch graph
+- DeepFool comparison bar chart
+
+---
+
+## Key Learnings
+- CNNs achieve high accuracy but are vulnerable to adversarial attacks  
+- Small perturbations can significantly affect predictions  
+- Attack implementations vary in effectiveness  
+
+---
+
+## Tech Stack
+- Python 🐍  
+- PyTorch 🔥  
+- NumPy  
+- Matplotlib  
+- torchattacks  
+
+---
+
+## Project Structure
+
 It highlights:
 - Manual deep learning implementation (NumPy)
 - Framework-based optimization (PyTorch)
