@@ -383,7 +383,7 @@ This assignment focuses on bounding box regression, CNN architecture design, and
 
 This assignment demonstrates complete object localization pipeline using CNNs.
 
-# Deep Learning Assignment — CNN & Adversarial Attacks
+# Assignment — CNN & Adversarial Attacks
 
 ## Overview
 This project implements a Convolutional Neural Network (CNN) for image classification and evaluates its robustness using adversarial attacks such as **DeepFool**. The assignment also compares a custom implementation with the `torchattacks` library.
@@ -467,14 +467,14 @@ Reason:
 
 ---
 
-## 📊 Comparison
+## Comparison
 
 | Method                  | Success Rate |
 |------------------------|-------------|
 | Custom DeepFool        | ~100%       |
 | torchattacks DeepFool  | ~93–95%     |
 
-📉 Difference: ~5–7%
+Difference: ~5–7%
 
 ### Conclusion:
 Both implementations follow the same DeepFool algorithm.  
@@ -514,6 +514,116 @@ It highlights:
 - Manual deep learning implementation (NumPy)
 - Framework-based optimization (PyTorch)
 - Real-world computer vision application
+
+---
+# Assignment 7: Human Activity Recognition using GRU (PyTorch)
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
+---
+
+## Overview
+
+This project implements **Human Activity Recognition (HAR)** using deep learning on the **UCI HAR Dataset**.
+
+Two models were developed:
+- GRU model built from scratch
+- GRU model using PyTorch (`nn.GRU`)
+
+The objective is to classify human activities such as walking, sitting, and standing.
+
+---
+
+## Dataset
+
+- UCI Human Activity Recognition Dataset
+- 30 subjects
+- 561 features
+- 6 activity classes:
+  - WALK
+  - WALK_UPSTAIRS
+  - WALK_DOWNSTAIRS
+  - SITTING
+  - STANDING
+  - LAYING
+
+---
+
+## Preprocessing
+
+- Subject-wise split:
+  - Train: 20 subjects
+  - Validation: 5 subjects
+  - Test: 5 subjects
+- Feature standardization (Z-score)
+- Reshaping features into sequence format for GRU
+
+---
+
+## Models
+
+### 1. GRU from Scratch
+- Hidden Size: 64
+- Layers: 2
+- Dropout: 0.4
+
+### 2. PyTorch GRU
+- Implemented using `torch.nn.GRU`
+- Same architecture for fair comparison
+
+---
+
+## Training Details
+
+- Loss Function: CrossEntropyLoss
+- Optimizer: AdamW
+- Learning Rate: 1e-4
+- LR Scheduler: ReduceLROnPlateau
+- Gradient Clipping
+- Early Stopping
+- Best Model Saving
+
+---
+
+## Results
+
+### From-Scratch GRU
+- Accuracy: **93.71%**
+
+### PyTorch GRU
+- Accuracy: **91.80%**
+
+---
+
+## Comparison
+
+| Model | Accuracy |
+|------|--------|
+| From-Scratch GRU | **93.71%** |
+| PyTorch GRU | 91.80% |
+
+The custom GRU model performs better and shows improved generalization.
+
+---
+
+## Observations
+
+- High accuracy across all classes
+- Minor confusion between:
+  - SITTING and STANDING
+  - WALK and WALK_UPSTAIRS
+
+---
+
+## Tech Stack
+
+- Python
+- PyTorch
+- NumPy
+- Matplotlib
+- Scikit-learn
 
 ---
 
