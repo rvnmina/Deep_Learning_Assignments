@@ -789,10 +789,5 @@ Indicates good color prediction
 
 ---
 
-## How to Run
-
-```bash
-pip install torch torchvision opencv-python matplotlib
-jupyter notebook Lab_09__Autoencoders_and_VAEs.ipynb
 ## Author
 Ravindra Mina 
