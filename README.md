@@ -677,5 +677,122 @@ B.Tech ECE, NIT Jalandhar
 - The implementation is intended for learning and experimentation purposes  
 ---
 
+# Image Colorization using Autoencoder (PyTorch)
+
+## Overview
+This project implements an **Autoencoder (AE)** for image colorization using the **Oxford Flowers102 dataset**.  
+The model learns to predict the **a and b color channels** from the **grayscale (L channel)** in the LAB color space.
+
+---
+
+## Objectives
+- Convert RGB images → LAB color space  
+- Train an Autoencoder:
+  - **Input:** L channel (grayscale)
+  - **Output:** a and b channels (color)
+- Apply data augmentation  
+- Evaluate using reconstruction loss  
+- Visualize colorized outputs  
+
+---
+
+## Model Architecture
+- Convolutional Autoencoder (Encoder–Decoder)
+- Inspired by **U-Net (without skip connections)**
+
+### Components
+- Convolutional Layers  
+- Batch Normalization  
+- ReLU Activation  
+- MaxPooling (downsampling)  
+- Transposed Convolutions (upsampling)  
+
+### Model Details
+- Input: `1 × 64 × 64`  
+- Output: `2 × 64 × 64`  
+- Parameters: **~2.03 Million**
+
+---
+
+## 📂 Dataset
+**Oxford Flowers102 Dataset**
+- 102 categories  
+- Train: 1020 images  
+- Validation: 1020 images  
+- Test: 6149 images  
+
+---
+
+## Data Preprocessing
+- Resize → `64×64`  
+- Convert RGB → LAB  
+- Normalize to `[0,1]`  
+
+### Data Augmentation (Train Only)
+- Random Horizontal Flip  
+- Random Rotation  
+- Random Resized Crop  
+- Color Jitter  
+
+---
+
+## Loss Function
+
+### 1. Reconstruction Loss (L1)
+- Pixel-wise difference
+
+### 2. Histogram Loss
+- Matches color distribution
+
+### 3. Saturation Loss
+- Preserves color intensity
+
+### Final Loss: α·Reconstruction + β·Histogram + γ·Saturation
+
+
+---
+
+## Training Details
+- Optimizer: **Adam**  
+- Learning Rate: `1e-3`  
+- Epochs: `10`  
+- Batch Size: `32`  
+
+---
+
+## Results
+
+### Test Performance: Mean Reconstruction Error: 0.0643
+
+
+Indicates good color prediction  
+
+---
+
+## Visualization
+
+| Grayscale | Ground Truth | Colorized |
+|----------|-------------|----------|
+| Input Image | Original | Predicted |
+
+### Observations:
+- Structure preserved  
+- Colors are slightly desaturated  
+- Outputs are visually plausible  
+
+---
+
+## Limitations
+- Slightly faded colors  
+- Not exact ground truth colors  
+- Colorization is an **ill-posed problem**  
+
+---
+
+## How to Run
+
+```bash
+pip install torch torchvision opencv-python matplotlib
+jupyter notebook Lab_09__Autoencoders_and_VAEs.ipynb
 ## Author
 Ravindra Mina 
