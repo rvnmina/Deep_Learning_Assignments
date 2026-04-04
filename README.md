@@ -625,6 +625,56 @@ The custom GRU model performs better and shows improved generalization.
 - Matplotlib
 - Scikit-learn
 
+
+# Assignment 8: Machine Learning / Deep Learning Implementation
+
+## Objective
+To implement machine learning/deep learning models and analyze their performance on a given dataset through preprocessing, training, evaluation, and visualization.
+
+---
+
+## Implemented Tasks
+- Loaded the dataset using appropriate libraries  
+- Performed data preprocessing (handling missing values, encoding, normalization)  
+- Split the dataset into training and test sets (70%–30%)  
+- Implemented the required model(s)  
+- Trained the model on the dataset  
+- Evaluated performance using relevant metrics  
+- Visualized results using plots and graphs  
+- Compared results with baseline or standard implementations  
+- Analyzed model performance and behavior  
+
+---
+
+## Concepts Used
+- Machine Learning / Deep Learning algorithms  
+- Data preprocessing techniques  
+- Model training and optimization  
+- Performance evaluation metrics (Accuracy, Precision, Recall, etc.)  
+- Data visualization  
+- Model comparison and analysis  
+
+---
+
+## Files
+- `25AI60R02_Assignment8.ipynb` – Complete implementation including preprocessing, training, evaluation, and visualization  
+
+---
+
+## Results
+The implemented model achieved satisfactory performance on the dataset. Evaluation metrics indicate good generalization ability. The results are comparable to standard implementations, and visualizations highlight learning trends and model behavior.
+
+---
+
+## Author
+Ravindra Mina  
+B.Tech ECE, NIT Jalandhar  
+
+---
+
+## Notes
+- This assignment is part of academic coursework  
+- The implementation is intended for learning and experimentation purposes  
 ---
 
 ## Author
