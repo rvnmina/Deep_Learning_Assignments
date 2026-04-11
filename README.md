@@ -789,5 +789,157 @@ Indicates good color prediction
 
 ---
 
+# Final assignment of this course — Image Captioning using Transformers
+
+---
+
+## Overview
+This project implements an **image captioning system using Transformer architectures** and evaluates different approaches:
+
+- Custom Transformer (built from scratch)
+- Native PyTorch Transformer
+- Pretrained ViT-GPT2 model  
+- Performance comparison using BLEU score
+
+---
+
+## Objectives
+- Load and explore the Flickr8K dataset  
+- Build a Transformer encoder-decoder from scratch  
+- Train models using Adam optimizer  
+- Evaluate using BLEU score  
+- Compare custom, native, and pretrained models  
+- Visualize training performance  
+
+---
+
+## Dataset
+
+- **Dataset:** Flickr8K  
+- **Source:** HuggingFace  
+- **Total Samples:** 8000  
+
+| Split | Samples |
+|------|--------|
+| Train | 6000 |
+| Validation | 1000 |
+| Test | 1000 |
+
+- Each image contains **5 human-annotated captions**
+
+---
+
+## Model Architectures
+
+### Custom Transformer (From Scratch)
+- Multi-head self-attention  
+- Cross-attention (encoder-decoder)  
+- Feedforward networks  
+- LayerNorm + Residual connections  
+- Sinusoidal positional encoding  
+
+**Total Parameters:** ~9.6 Million  
+
+---
+
+### Native PyTorch Transformer
+- `nn.TransformerEncoderLayer`  
+- `nn.TransformerDecoderLayer`  
+- Same hyperparameters as custom model  
+
+---
+
+### Pretrained Model (ViT-GPT2)
+- Model: `nlpconnect/vit-gpt2-image-captioning`  
+- Vision Transformer (ViT) for image encoding  
+- GPT-2 for caption generation  
+- Pretrained on large-scale datasets  
+
+---
+
+## Training Details
+
+- **Optimizer:** Adam  
+- **Learning Rate:** 1e-4  
+- **Epochs:** 5  
+- **Loss Function:** CrossEntropyLoss  
+- **Technique:** Teacher Forcing  
+
+---
+
+## Training Results
+
+- Smooth convergence observed  
+- Training and validation loss decrease steadily  
+- No major overfitting  
+
+---
+
+## Performance Evaluation
+
+### BLEU Score Comparison
+
+| Model | BLEU Score |
+|------|------------|
+| Custom Transformer | ~0.00 |
+| Native Transformer | ~0.00 |
+| ViT-GPT2 (Pretrained) | **~0.31** |
+
+---
+
+## Observations
+
+- Custom & native models show poor performance due to:
+  - Random image features  
+  - Dummy vocabulary  
+
+- Pretrained ViT-GPT2 significantly outperforms:
+  - Learns meaningful visual representations  
+  - Trained on large-scale datasets  
+
+Demonstrates importance of **pretraining and feature extraction**
+
+---
+
+## Evaluation Metric
+
+- **BLEU Score**
+  - Each generated caption is compared with **5 reference captions**
+  - Final score is averaged over the test dataset  
+
+---
+
+## Technologies Used
+
+- Python 3.13  
+- PyTorch  
+- HuggingFace Transformers  
+- HuggingFace Datasets  
+- NLTK (BLEU Score)  
+- Matplotlib  
+
+---
+
+## Key Learnings
+
+- Implemented Transformer architecture from scratch  
+- Understood encoder-decoder attention mechanisms  
+- Learned autoregressive sequence generation  
+- Compared custom vs pretrained models  
+- Applied BLEU evaluation  
+
+---
+
+## Conclusion
+
+This project demonstrates:
+- Practical implementation of Transformers for image captioning  
+- Significant performance gap between custom and pretrained models  
+- Importance of large-scale training and feature learning  
+
+---
+
+**End of all Assignments**
+
 ## Author
 Ravindra Mina 
